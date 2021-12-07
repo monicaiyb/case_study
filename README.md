@@ -1,13 +1,13 @@
 ## INTRODUCTION
 
-A python program that allows a user to input a name, a phone number and an amount.
-And uses it to initialise a mobile money payment.
-The API intergration service we are using is Beyonic
-PURPOSE
+A python web application that captures data at milk cooperative with a mysql database backend.
 
-The app should allow a user to make payments using mobile money
-A merchant like an online shop should be able to request for payment on mobile from client.
-The merchant should be able to receive payments using mobile money
+# Features of the application
+The application allows for
+-   Registration of farmers
+
+
+ built with html, css,
 
 
 ## DEPENDENCIES Run 'pip3 install r requirements.txt' to install dependencies

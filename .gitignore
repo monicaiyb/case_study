@@ -1,35 +1,4 @@
-Skip to content
-Search or jump to…
-Pull requests
-Issues
-Marketplace
-Explore
  
-@monicaiyb 
-monicaiyb
-/
-case_study
-Public
-1
-0
-0
-Code
-Issues
-Pull requests
-Actions
-Projects
-Wiki
-Security
-Insights
-Settings
-case_study/.gitignore
-@monicaiyb
-monicaiyb Initial commit
-Latest commit f9309bb 33 seconds ago
- History
- 1 contributor
-129 lines (105 sloc)  1.76 KB
-  
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
