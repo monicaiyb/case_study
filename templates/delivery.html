@@ -52,12 +52,13 @@
                 <nav>
                   <h3 class="text-muted">Emata Case Study</h3>
                   <ul class="nav nav-pills pull-right">
-                    <li role="presentation"><a href="main">Home</a></li>
+                    <li role="presentation"><a href="{{ url_for('home') }}">Home</a></li>
                     <li role="presentation" class="active">
-                      <a href="#">Register farmer</a>
+                      <a href="{{ url_for('register') }}">Register farmer</a>
                     </li>
-                    <li role="presentation"><a href="#">View farmers</a></li>
-                    <li role="presentation"><a href="#">View Deliveries</a></li>
+                    <li role="presentation"><a href="{{ url_for('farmer') }}">View farmers</a></li>
+                    <li role="presentation"><a href="{{ url_for('deliver_form') }}">Make a Delivery</a></li>
+                    <li role="presentation"><a href="{{ url_for('milk_delivery') }}">View Deliveries</a></li>
                   </ul>
                 </nav>
               </div>
@@ -76,7 +77,7 @@
                     {% for farmer in farmerlist %}
 
                     <tr>
-                      <td>{{farmer}</td>
+                      <td>{{}}</td>
                     </tr>
 
                     {% endfor %}

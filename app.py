@@ -11,13 +11,15 @@ app.config['MYSQL_DB'] = 'case'
 mysql = MySQL(app)
 
 # Acessing the app through the main rout
+
+
+@app.route('/')
+def home():
+   return render_template('index.html')
+
 @app.route('/register')
 def about():
     return render_template('form.html')
-
-@app.route('/success/<name>')
-def success(name):
-   return 'welcome %s' % name
 
 @app.route('/register', methods=['GET', 'POST'])
 def register():
@@ -47,12 +49,10 @@ def farmer():
     return render_template('farmer.html',farmerlist=farmerlist)
 
 #Routes for the milk delivery
-@app.route('/milk_delivery')
-def deliver_form():
-    return render_template('delivery_form.html')
 
-@app.route('/milk_delivery',methods = ['POST', 'GET'])
-def delivery():
+
+@app.route('/make_delivery',methods = ['POST', 'GET'])
+def deliver_form():
   if request.method == "POST":
         details = request.form
         farmer_name = details['farmer_name']
@@ -63,8 +63,16 @@ def delivery():
         cur.execute("INSERT INTO deliveries(farmer_name, address, location,quantity) VALUES (%s,%s, %s,%s)", (farmer_name, address, location, quantity))
         mysql.connection.commit()
         cur.close()
-        return render_template('farmer.html')
-         
+        return render_template('delivery.html')
+
+@app.route('/milk_delivery')
+def milk_delivery():
+    cur = mysql.connection.cursor()
+    #execute select statement to fetch data to be displayed in combo/dropdown
+    cur.execute('SELECT * FROM farmers') 
+    #fetch all rows ans store as a set of tuples 
+    deliverylist = cur.fetchall() 
+    return render_template('delivery.html',deliverylist=deliverylist)      
  
 if __name__ == '__main__':
    app.run(debug = True)
