@@ -35,13 +35,9 @@ def register():
         return render_template('farmer.html')
     return render_template('farmer.html')
 # Route to display all farmers
-@app.route('/farmers')
-def farmer():
-   return render_template('farmer.html', farmer=farmer)
 
-
-@app.route('/') 
-def index(): 
+@app.route('/farmers') 
+def farmer(): 
     cur = mysql.connection.cursor()
     #execute select statement to fetch data to be displayed in combo/dropdown
     cur.execute('SELECT * FROM farmers') 
@@ -50,14 +46,25 @@ def index():
     #render template and send the set of tuples to the HTML file for displaying
     return render_template('farmer.html',farmerlist=farmerlist)
 
+#Routes for the milk delivery
+@app.route('/milk_delivery')
+def deliver_form():
+    return render_template('delivery_form.html')
+
 @app.route('/milk_delivery',methods = ['POST', 'GET'])
 def delivery():
-   if request.method == 'POST':
-      user = request.form['nm']
-      return redirect(url_for('success',name = user))
-   else:
-      user = request.args.get('nm')
-      return redirect(url_for('success',name = user))
+  if request.method == "POST":
+        details = request.form
+        farmer_name = details['farmer_name']
+        address=details['address']
+        location = details['location']
+        quantity = details['quantity']
+        cur = mysql.connection.cursor()
+        cur.execute("INSERT INTO deliveries(farmer_name, address, location,quantity) VALUES (%s,%s, %s,%s)", (farmer_name, address, location, quantity))
+        mysql.connection.commit()
+        cur.close()
+        return render_template('farmer.html')
+         
  
 if __name__ == '__main__':
    app.run(debug = True)

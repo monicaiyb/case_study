@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Emata case study</title>
+
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+      crossorigin="anonymous"
+    />
+
+    <link href="../static/style.css" rel="stylesheet" />
+  </head>
+
+  <body>
+    <div class="container">
+      <div class="header">
+        <nav>
+          <h3 class="text-muted">Emata Case Study</h3>
+          <ul class="nav nav-pills pull-right">
+            <li role="presentation"><a href="main">Home</a></li>
+            <li role="presentation" class="active">
+              <a href="#">Register farmer</a>
+            </li>
+            <li role="presentation"><a href="#">View farmers</a></li>
+            <li role="presentation"><a href="#">View Deliveries</a></li>
+          </ul>
+        </nav>
+      </div>
+
+      <div class="jumbotron">
+        <h4>View Farmers</h4>
+        <!DOCTYPE html>
+        <html lang="en">
+          <head>
+            <title>Emata case study</title>
+
+            <link
+              rel="stylesheet"
+              href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+              integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+              crossorigin="anonymous"
+            />
+
+            <link href="../static/style.css" rel="stylesheet" />
+          </head>
+
+          <body>
+            <div class="container">
+              <div class="header">
+                <nav>
+                  <h3 class="text-muted">Emata Case Study</h3>
+                  <ul class="nav nav-pills pull-right">
+                    <li role="presentation"><a href="main">Home</a></li>
+                    <li role="presentation" class="active">
+                      <a href="#">Register farmer</a>
+                    </li>
+                    <li role="presentation"><a href="#">View farmers</a></li>
+                    <li role="presentation"><a href="#">View Deliveries</a></li>
+                  </ul>
+                </nav>
+              </div>
+
+              <div class="jumbotron">
+                <h4>View Deliveries</h4>
+                <table class="table">
+                  <thead>
+                    <tr>
+                      <th scope="col">First</th>
+                      <th scope="col">Last</th>
+                      <th scope="col">Handle</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {% for farmer in farmerlist %}
+
+                    <tr>
+                      <td>{{farmer}</td>
+                    </tr>
+
+                    {% endfor %}
+                  </tbody>
+                </table>
+              </div>
+
+              <footer class="footer">
+                <p>&copy; Monica 2021</p>
+              </footer>
+            </div>
+          </body>
+        </html>
+      </div>
+    </div>
+  </body>
+</html>

@@ -5,9 +5,13 @@ A python web application that captures data at milk cooperative with a mysql dat
 # Features of the application
 The application allows for
 -   Registration of farmers
+-   Captures daily milk delivery
+-   View farmers list and individual profile
+-   View farme milk deliveries
 
-
- built with html, css,
+# Technology
+-   Backend Python, flask, Mysql,   
+-   Front end-Built with html, css, bootstrap, jinja
 
 
 ## ENVIRONMENT SETUP DEPENDENCIES Run 'pip3 install r requirements.txt' to install dependencies
