@@ -24,7 +24,7 @@
               <a href="{{ url_for('register') }}">Register farmer</a>
             </li>
             <li role="presentation"><a href="{{ url_for('farmer') }}">View farmers</a></li>
-            <li role="presentation"><a href="{{ url_for('deliver_form') }}">Make a Delivery</a></li>
+            <li role="presentation"><a href="{{ url_for('delivery_form') }}">Make a Delivery</a></li>
             <li role="presentation"><a href="{{ url_for('milk_delivery') }}">View Deliveries</a></li>
           </ul>
         </nav>
@@ -39,7 +39,7 @@
                 <form 
                 class="form-signin"
                 method="POST"
-                action="{{ url_for('delivery') }}"
+                action="{{ url_for('milk_delivery') }}"
                 >
                     <div class="row">
                       <div class="col">

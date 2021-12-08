@@ -52,7 +52,7 @@ def farmer():
 
 
 @app.route('/make_delivery',methods = ['POST', 'GET'])
-def deliver_form():
+def delivery_form():
   if request.method == "POST":
         details = request.form
         farmer_name = details['farmer_name']
@@ -64,12 +64,14 @@ def deliver_form():
         mysql.connection.commit()
         cur.close()
         return render_template('delivery.html')
+  return render_template('delivery_form.html')
+  
 
-@app.route('/milk_delivery')
+@app.route('/delivery')
 def milk_delivery():
     cur = mysql.connection.cursor()
     #execute select statement to fetch data to be displayed in combo/dropdown
-    cur.execute('SELECT * FROM farmers') 
+    cur.execute('SELECT * FROM deliveries') 
     #fetch all rows ans store as a set of tuples 
     deliverylist = cur.fetchall() 
     return render_template('delivery.html',deliverylist=deliverylist)      
