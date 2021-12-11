@@ -1,34 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <title>Emata case study</title>
+{% extends 'layout.html' %}
 
-    <link
-      rel="stylesheet"
-      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
-      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
-      crossorigin="anonymous"
-    />
-    
-    <link href="../static/style.css" rel="stylesheet" />
-  </head>
-
-  <body>
-    <div class="container">
-      <div class="header">
-        <nav>
-          <h3 class="text-muted">Emata Case Study</h3>
-          <ul class="nav nav-pills pull-right">
-            <li role="presentation"><a href="{{ url_for('home') }}">Home</a></li>
-            <li role="presentation" class="active">
-              <a href="{{ url_for('register') }}">Register farmer</a>
-            </li>
-            <li role="presentation"><a href="{{ url_for('farmer') }}">View farmers</a></li>
-            <li role="presentation"><a href="{{ url_for('deliver_form') }}">Make a Delivery</a></li>
-            <li role="presentation"><a href="{{ url_for('milk_delivery') }}">View Deliveries</a></li>
-          </ul>
-        </nav>
-      </div>
+{% block content %} 
 
       <div class="jumbotron">
         <h4>View Farmers</h4>
@@ -61,9 +33,4 @@
      
       </div>
 
-      <footer class="footer">
-        <p>&copy; Monica 2021</p>
-      </footer>
-    </div>
-  </body>
-</html>
+      {% endblock %}

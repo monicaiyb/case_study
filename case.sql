@@ -15,8 +15,8 @@ CREATE TABLE IF NOT EXISTS `deliveries` (
 	`id` int(11) NOT NULL AUTO_INCREMENT,
   	`farmer_name` varchar(50) NOT NULL,
 	`address`varchar(20) NOT NULL,
-  	`location` varchar(255) NOT NULL,
-  	`quantity` varchar(100) NOT NULL,
+  	`location` varchar(50) NOT NULL,
+  	`quantity` int(10) NOT NULL,
     PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 

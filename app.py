@@ -10,9 +10,7 @@ app.config['MYSQL_DB'] = 'case'
 
 mysql = MySQL(app)
 
-# Acessing the app through the main rout
-
-
+# Acessing the app through the main route
 @app.route('/')
 def home():
    return render_template('index.html')
@@ -49,7 +47,9 @@ def farmer():
     return render_template('farmer.html',farmerlist=farmerlist)
 
 #Routes for the milk delivery
-
+@app.route('/make_delivery')
+def delivery_form1():
+    return render_template('delivery_form.html')
 
 @app.route('/make_delivery',methods = ['POST', 'GET'])
 def delivery_form():
@@ -64,7 +64,7 @@ def delivery_form():
         mysql.connection.commit()
         cur.close()
         return render_template('delivery.html')
-  return render_template('delivery_form.html')
+  return render_template('delivery.html')
   
 
 @app.route('/delivery')
