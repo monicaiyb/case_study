@@ -1,4 +1,5 @@
 from flask import Flask, redirect, url_for, request, render_template
+# from werkzeug import generate_password_hash, check_password_hash
 from flask_mysqldb import MySQL
 app = Flask(__name__)
 
@@ -28,8 +29,13 @@ def register():
         email = details['email']
         password = details['password']
         cur = mysql.connection.cursor()
+        # hashed_password = generate_password_hash(password)
+        # cur.callproc('sp_createUser',(name,email,phone,hashed_password))
         cur.execute("INSERT INTO farmers(name, phone, email,password) VALUES (%s,%s, %s,%s)", (name, phone, email, password))
         mysql.connection.commit()
+
+        
+        
         msg = 'You have successfully registered!'
         cur.close()
         return render_template('farmer.html')
